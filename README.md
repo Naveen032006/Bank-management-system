@@ -1,115 +1,147 @@
-💳 Bank Management System - C++
-📌 Introduction
-The Bank Management System is a simple console-based application written in C++. It offers fundamental functionalities such as account creation, deposit/withdrawal of money, and viewing account details. It is built using Object-Oriented Programming concepts and utilizes a linked list for dynamic account storage.
+# 💳 Bank Management System - C++
 
-✅ Features
-Add Account: Create a new bank account with an initial balance.
+## 📌 Introduction
+The **Bank Management System** is a simple console-based application developed in **C++**. It provides functionalities to manage bank accounts, perform transactions, and display account details.
 
-Deposit Money: Deposit an amount into an existing account.
+The system follows an **Object-Oriented Programming (OOP)** approach and uses a **linked list** to store account details dynamically.
 
-Withdraw Money: Withdraw funds from an account (if sufficient balance exists).
+---
 
-Display All Accounts: View all account holders with account numbers and balances.
+## ✅ Features
 
-Exit System: Terminate the program gracefully.
+- **Add Account**: Allows users to create a new bank account with an initial balance.
+- **Deposit Money**: Enables users to deposit an amount into an existing account.
+- **Withdraw Money**: Allows users to withdraw an amount from their account if sufficient balance is available.
+- **Display All Accounts**: Lists all bank accounts with account numbers, account holders, and balances.
+- **Exit System**: Terminates the program.
 
-🛠️ Technologies Used
-Programming Language: C++
+---
 
-Concepts Implemented:
+## 🛠️ Technologies Used
 
-Object-Oriented Programming (Classes, Objects, Encapsulation, Inheritance)
+- **Programming Language**: C++
+- **Concepts Used**:
+  - Object-Oriented Programming (Classes, Objects, Encapsulation, Inheritance)
+  - Data Structures (Singly Linked List)
 
-Data Structures (Singly Linked List)
+---
 
-🧩 Class Structure
-1. BankAccount Class
-Represents an individual bank account.
+## 🧩 Class Structure
 
-Attributes:
+### 1. `BankAccount` Class
+Represents a bank account with attributes and methods to perform transactions.
 
-accountNumber (string): Unique account identifier.
+**Attributes:**
+- `accountNumber` (string): Stores the account number.
+- `accountHolder` (string): Stores the name of the account holder.
+- `balance` (double): Stores the current balance of the account.
 
-accountHolder (string): Name of the account holder.
+**Methods:**
+- `BankAccount(string, string, double)`: Constructor to initialize account details.
+- `deposit(double)`: Adds an amount to the balance.
+- `withdraw(double)`: Deducts an amount from the balance if sufficient funds exist.
+- `getBalance()`: Returns the account balance.
+- `getAccountHolder()`: Returns the account holder’s name.
+- `getAccountNumber()`: Returns the account number.
 
-balance (double): Current account balance.
+---
 
-Methods:
+### 2. `Node` Struct
+- Represents a node in the linked list that holds a `BankAccount` object.
 
-BankAccount(string, string, double): Constructor to initialize account details.
+---
 
-deposit(double): Adds funds to the account.
+### 3. `LinkedList` Class
+Implements a linked list to store multiple bank accounts dynamically.
 
-withdraw(double): Deducts amount if sufficient balance is available.
+**Methods:**
+- `insert(BankAccount)`: Adds a new account to the list.
+- `search(string)`: Finds an account by account number.
+- `display()`: Displays all accounts in the system.
 
-getBalance(): Returns current balance.
+---
 
-getAccountHolder(): Returns account holder's name.
+### 4. `Bank` Class
+Manages all bank operations and interacts with the linked list.
 
-getAccountNumber(): Returns account number.
+**Methods:**
+- `addAccount(BankAccount)`: Adds a new account to the bank.
+- `getAccount(string)`: Searches and returns a pointer to a bank account.
+- `displayAllAccounts()`: Displays all stored accounts.
 
-2. Node Struct
-A structure representing a node in the linked list holding a BankAccount object.
+---
 
-3. LinkedList Class
-Manages dynamic storage of bank accounts using a singly linked list.
+## 🔁 Program Flow
 
-Methods:
+1. **Main Menu**: Displays options to the user.
+2. **User Choice Processing**:
+   - If **Add Account** is selected, the system prompts for account details and stores them.
+   - If **Deposit** or **Withdraw** is selected, it prompts for an account number and performs the respective transaction.
+   - If **Display All Accounts** is selected, all stored accounts are displayed.
+   - If **Exit** is selected, the program terminates.
 
-insert(BankAccount): Adds a new node/account to the list.
+---
 
-search(string): Finds an account by account number.
-
-display(): Prints details of all accounts.
-
-4. Bank Class
-Central class managing bank operations.
-
-Methods:
-
-addAccount(BankAccount): Adds a new account to the system.
-
-getAccount(string): Returns a pointer to a specific account.
-
-displayAllAccounts(): Displays all available accounts.
-
-🔁 Program Flow
-Display Main Menu with all available operations.
-
-Process user input:
-
-Add Account: Request user input and store the account.
-
-Deposit/Withdraw: Ask for account number and perform transaction.
-
-Display All Accounts: Show all records.
-
-Exit: Quit the application.
-
-🧪 Example Usage
-markdown
-Copy
-Edit
+## 🧪 Example Usage
 Welcome to RR Bank Management System
-************
-1. Add Account
-2. Deposit
-3. Withdraw
-4. Display All Accounts
-5. Exit
+
+Add Account
+
+Deposit
+
+Withdraw
+
+Display All Accounts
+
+Exit
+
 Enter your choice: 1
 Enter Account Number: 1001
 Enter Account Holder Name: John Doe
 Enter Initial Balance: 5000
-🚀 Future Enhancements
-Add file handling for persistent account storage.
 
-Implement a login system for added security.
+Account successfully created!
 
-Introduce interest calculations for savings accounts.
+Enter your choice: 2
+Enter Account Number: 1001
+Enter Amount to Deposit: 2000
 
-Build a GUI version using frameworks like Qt or Tkinter.
+Amount deposited successfully!
 
-📌 Conclusion
-This Bank Management System project serves as an educational tool to understand and apply object-oriented programming and linked list data structures in a real-world scenario. It lays the groundwork for creating more advanced and secure banking applications.
+Enter your choice: 3
+Enter Account Number: 1001
+Enter Amount to Withdraw: 1000
+
+Amount withdrawn successfully!
+
+Enter your choice: 4
+
+Account Number: 1001
+Account Holder: John Doe
+Balance: 6000.00
+
+Enter your choice: 5
+
+Thank you for using RR Bank Management System.
+---
+
+## 🚀 Future Enhancements
+
+- Implement **file handling** to store account details persistently.
+- Add a **login system** for user authentication and security.
+- Introduce **interest calculations** for savings accounts.
+- Develop a **GUI version** using frameworks like **Qt** or **Tkinter**.
+
+---
+
+## 📌 Conclusion
+
+This project is a basic **Bank Management System** designed to demonstrate:
+- Object-Oriented Programming principles
+- Linked list data structures
+- Real-world banking operations in C++
+
+It serves as a foundational model for further enhancements and can be expanded into a fully functional banking application.
+
+---
 
